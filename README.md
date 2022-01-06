@@ -1,2 +1,2 @@
 # goyacc-flex
-Use goyacc&flex to parse the logical tree
+基于goyacc和flex实现的逻辑语法解析器

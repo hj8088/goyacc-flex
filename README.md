@@ -1,2 +1,2 @@
-# flex-bison_example
-Use Flex&amp;Bison to parse the logical tree
+# goyacc-flex
+Use goyacc&flex to parse the logical tree

@@ -1,0 +1,43 @@
+%{
+package logictree
+
+func setResult(l yyLexer, root AbstractNode) {
+    l.(*ExprLexer).caller.Call(root)
+}
+%}
+
+%union{
+    str_ string
+    node_ AbstractNode
+}
+
+%token <str_> KEY
+%token <str_> VALUE
+
+%type <node_> expr
+
+%left LOGICAL_OR
+%left LOGICAL_AND
+
+%left LEFT_PAREN
+    RIGHT_PAREN
+
+%left COLON
+
+%start main
+
+%%
+
+main: expr
+  {
+    setResult(yylex, $1)
+  }
+  ;
+
+expr: KEY COLON VALUE {$$ = newLeafNode($1, $3)}
+   | expr LOGICAL_AND expr {$$ = newLogicNode(LR_AND, $1, $3)}
+   | expr LOGICAL_OR expr {$$ = newLogicNode(LR_OR, $1, $3)}
+   | LEFT_PAREN expr RIGHT_PAREN {$$ = $2}
+   ;
+
+%%

@@ -1,5 +1,5 @@
 %{
-package logictree
+package goyacc_lex
 
 func setResult(l yyLexer, root AbstractNode) {
     l.(*ExprLexer).caller.Call(root)

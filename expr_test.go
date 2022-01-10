@@ -12,4 +12,5 @@ func TestExprLexer(t *testing.T) {
 	if ret != 0 {
 		t.Fatalf("parse failed, ret:%d\n", ret)
 	}
+
 }

@@ -369,8 +369,8 @@ struct yy_trans_info
 static yyconst flex_int16_t yy_accept[23] =
     {   0,
         0,    0,    0,    0,   12,   11,    5,   11,    8,    9,
-       11,   10,    1,   11,    3,    2,    3,    6,    1,    7,
-        4,    0
+       11,   10,    1,   11,    4,    2,    4,    6,    1,    7,
+        3,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -778,19 +778,19 @@ case 3:
 YY_RULE_SETUP
 #line 23 "lexer.l"
 {
-	yyextra_text_append(yyget_extra(yyscanner), yyget_text(yyscanner)[0]);
+	yyextra_text_append(yyget_extra(yyscanner), yyget_text(yyscanner)[1]);
 }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 27 "lexer.l"
 {
-	yyextra_text_append(yyget_extra(yyscanner), yyget_text(yyscanner)[1]);
+	yyextra_text_append(yyget_extra(yyscanner), yyget_text(yyscanner)[0]);
 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 31 "lexer.l"
+#line 32 "lexer.l"
 {
 	yyextra_text_clear(yyget_extra(yyscanner));
 	BEGIN(STRING);
@@ -798,32 +798,32 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 36 "lexer.l"
+#line 37 "lexer.l"
 return LOGIC_AND;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 37 "lexer.l"
+#line 38 "lexer.l"
 return LOGIC_OR;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 39 "lexer.l"
+#line 40 "lexer.l"
 return LPAREN;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 40 "lexer.l"
+#line 41 "lexer.l"
 return RPAREN;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 41 "lexer.l"
+#line 42 "lexer.l"
 return COLON;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 43 "lexer.l"
+#line 44 "lexer.l"
 ECHO;
 	YY_BREAK
 #line 830 "yy.lex.c"
@@ -1981,7 +1981,7 @@ void yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 43 "lexer.l"
+#line 44 "lexer.l"
 
 
 
